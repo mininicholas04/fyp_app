@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         final EditText usernameEditText = findViewById(R.id.user_email);
         final EditText passwordEditText = findViewById(R.id.user_password);
         final Button loginButton = findViewById(R.id.btn_login);
-        final ProgressBar loadingProgressBar = findViewById(R.id.loading);
+        //final ProgressBar loadingProgressBar = findViewById(R.id.loading);
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-
+/*
         loginViewModel.getLoginResult().observe(this, new Observer<LoginResult>() {
             @Override
             public void onChanged(@Nullable LoginResult loginResult) {
@@ -73,6 +73,8 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+ */
 
         TextWatcher afterTextChangedListener = new TextWatcher() {
             @Override
@@ -105,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
+       /* loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loadingProgressBar.setVisibility(View.VISIBLE);
@@ -113,6 +115,8 @@ public class LoginActivity extends AppCompatActivity {
                         passwordEditText.getText().toString());
             }
         });
+
+        */
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
